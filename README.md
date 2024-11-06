@@ -17,10 +17,11 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-# Usuários para teste:
-----------------------
+## Usuários para teste:
+```
 username: 'john'
 password: 'changeme'
 --------------------
 username: 'maria'
 password: 'guess'
+```
