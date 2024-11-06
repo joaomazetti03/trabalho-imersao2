@@ -18,7 +18,7 @@ $ npm run start:prod
 ```
 
 # Usuários para teste:
-
+----------------------
 username: 'john'
 password: 'changeme'
 --------------------
