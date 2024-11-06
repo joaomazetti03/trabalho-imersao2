@@ -14,10 +14,17 @@ export class AuthService {
     pass: string,
   ): Promise<{ access_token: string }> {
     const user = await this.usersService.findOne(username);
-    if (user?.password !== pass) {
-      throw new UnauthorizedException();
+    
+    if (!user) {
+      throw new UnauthorizedException('Usuário não encontrado');
     }
+
+    if (user.password !== pass) {
+      throw new UnauthorizedException('Senha inválida');
+    }
+
     const payload = { sub: user.userId, username: user.username };
+
     return {
       access_token: await this.jwtService.signAsync(payload),
     };
